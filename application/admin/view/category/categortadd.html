@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>栏目添加页</title>
+    <script src="__STATIC__admin/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="__STATIC__layui/css/layui.css">
+    <script src="__STATIC__layui/layui.js"></script>
+    <style>
+        .current-color{
+            background-color:#009688;
+        }
+        .divide-line {
+            height: 45px;
+            background-color: #EEF5F9;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 45px;
+            font-size: 17px;
+            color: #1E88E5;
+        }
+
+        .divide-line span {
+            margin-left: 15px;
+        }
+
+        .layui-input,.layui-form-select{
+            width: 750px;
+        }
+        .main{
+            margin-left: 175px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="static/admin/Font_Icon/沐歌logo2.png" width="70" height="70"
+        >后台管理系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="{$Think.session.admin['adminPic']}" class="layui-nav-img" alt="{$Think.session.admin['adminName']}">
+                    {$Think.session.admin['adminName']}
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="personaldata">基本资料</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="#" onclick="loginOut()">注销</a></li>
+            <script>
+                function loginOut() {
+                    layer.confirm('你确定要注销吗？', {
+                        btn: ['确定', '算了'] //按钮
+                    }, function () {
+                        layer.msg('注销成功', {icon: 1});
+                        setTimeout(function () {
+                            location.href ="loginout";
+                        },1000)
+                    });
+                }
+            </script>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">博客信息管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/blog/blogList')}">博客列表</a></dd>
+                        <dd><a href="{:url('admin/blog/blogAdd')}">添加博客</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">博客栏目管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/category/categoryList')}">栏目列表</a></dd>
+                        <dd class="current-color"><a href="{:url('admin/category/categoryAdd')}">添加栏目</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/user/userList')}">用户列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">留言管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/Comment/commentList')}">评论列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">友情链接管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/link/linkList')}">友情链接列表</a></dd>
+                        <dd><a href="{:url('admin/link/linkAdd')}">添加友情链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">数据恢复中心</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{:url('admin/DataRecoveryCenter/recoveryBlogList')}">博文回收站</a></dd>
+                        <dd><a href="{:url('admin/DataRecoveryCenter/recoveryBlogTypeList')}">栏目回收站</a></dd>
+                        <dd><a href="{:url('admin/DataRecoveryCenter/recoveryUserList')}">用户回收站</a></dd>
+                        <dd><a href="{:url('admin/DataRecoveryCenter/recoveryLinkList')}">友情链接回收站</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">待定</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <!--        辅助线starting-->
+        <div class="divide-line">
+            <span>添加类别</span>
+        </div>
+        <!--        辅助线ending-->
+        <div class="main">
+            <form class="layui-form" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类别</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="typename" id="ipt" required autocomplete="off" placeholder="请输入..."
+                               class="layui-input" maxlength="15">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">分区</label>
+                    <div class="layui-input-inline" style="z-index: 3">
+                        <select name="sid">
+                            <option value="0">无</option>
+                            {foreach $cate_data['data'] as $item}
+                            {foreach $cate_data['data'] as $item}
+                            {if ($item.html!=='')}
+                            <option value="{$item.tid}" >{$item.html}{$item.typename}</option>
+                            {else /}
+                            <option value="{$item.tid}">{$item.typename}</option>
+                            {/if}                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn btn" lay-submit id="btn" lay-filter="go">添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--  主体 ending     -->
+    </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        ©沐丶歌丨
+    </div>
+</div>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function () {
+        var element = layui.element;
+        element.init();
+    });
+</script>
+
+<!-- 配置文件 -->
+<script type="text/javascript" src="__STATIC__uEditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__STATIC__uEditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        let ipt = document.getElementById('ipt');
+        form.on('submit(go)', function (data) {
+            console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+            console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+            console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            if (ipt.value == '') {
+                layer.msg(msg, '请输入名称！');
+                return false
+            }
+            $.ajax({
+                type: 'post',
+                url: "{:url('admin/category/doCategoryAdd')}",
+                data: data.field,
+                dataType: "json",
+                success: function (e) {
+                    console.log(e);
+                    var num = e.code;
+                    var msg = e.msg;
+                    if (num == 1) {
+                        layer.msg(msg, {icon: 1});
+                        setTimeout(function () {
+                            window.location.href = "{:url('admin/category/categoryList')}";
+                        }, 800);
+                    }else{
+                        layer.msg(msg, function () {
+                            window.location.reload();
+                        });
+                    }
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+
+</script>
+</body>
+</html>

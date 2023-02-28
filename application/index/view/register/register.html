@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__STATIC__index/css/register.css">
+    <link rel="stylesheet" href="__STATIC__layui/css/layui.css">
+    <script src="__STATIC__index/js/jquery-1.12.4.js"></script>
+    <script src="__STATIC__layui/layui.js"></script>
+    <title>注册页面</title>
+</head>
+<body>
+<div class="bg">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="__INDEX_IMG_LOGIN_LB__1.jpg"></div>
+            <div class="swiper-slide"><img src="__INDEX_IMG_LOGIN_LB__2.jpg"></div>
+            <div class="swiper-slide"><img src="__INDEX_IMG_LOGIN_LB__3.jpg"></div>
+            <div class="swiper-slide"><img src="__INDEX_IMG_LOGIN_LB__4.jpg"></div>
+            <div class="swiper-slide"><img src="__INDEX_IMG_LOGIN_LB__5.jpg"></div>
+        </div>
+    </div>
+</div>
+<div class="register">
+    <div class="content">
+        <p class="login-title">还等待什么呢？赶紧注册一个吧~</p>
+        <div class="uname">
+            <img src="__INDEX_IMG_COMMON__用户.png" alt="用户名">
+            <input type="text" maxlength="15" autocomplete="off" name="uname" required placeholder="输入用户名">
+        </div>
+        <div class="account">
+            <img src="__INDEX_IMG_COMMON__账号.png" alt="帐号">
+            <input type="text" maxlength="12" autocomplete="off" name="account" required placeholder="输入帐号 注册后不得修改">
+            <span></span>
+        </div>
+        <div class="password">
+            <img src="__INDEX_IMG_COMMON__密码.png" alt="密码">
+            <input type="password" maxlength="12" name="password" required placeholder="输入密码">
+        </div>
+        <div class="again-password">
+            <img src="__INDEX_IMG_COMMON__密码.png" alt="确认密码密码">
+            <input type="password" maxlength="12" required placeholder="确认密码">
+            <span></span>
+        </div>
+        <div class="again-password">
+            <img src="__INDEX_IMG_COMMON__邮箱.png" alt="邮箱">
+            <input type="email" name="email" autocomplete="off" required placeholder="邮箱">
+        </div>
+        <div class="captcha-list">
+            <div class="meta"><img src="__INDEX_IMG_COMMON__验证码.png"></div>
+            <div class="captcha"><input type="text" autocomplete="off" maxlength="4" name="captcha" required
+                                        placeholder="验证码..."></div>
+            <div class="code-img"><span><img src="captcha" id="captcha" alt="验证码"></span></div>
+        </div>
+        <div class="submit">
+            <button>注册</button>
+        </div>
+        <div class="login">
+            <div class="login-list">
+                <span>已有帐号？请等</span><a href="login">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="static/index/css/swiper.min.css">
+<script src="static/index/js/swiper.min.js"></script>
+<script src="__STATIC__index/js/register.js"></script>
+
+</body>
+</html>

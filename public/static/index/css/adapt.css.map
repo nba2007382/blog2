@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [
+    "adapt.less"
+  ],
+  "names": [],
+  "mappings": "AACA,mBAAqC,uBAAsB;EAEzD,IAAK;IACH,WAAA;;EAGF;IACE,aAAA;;EAGF;EAAY;IACV,UAAA;;;AAGJ,mBAAsC,uBAAsB;EAE1D,IAAK;EAAa;IAChB,aAAA;;EAGF;EAAY;IACV,WAAA;;;AAGJ,QAA0B;EAExB,IAAK;EAAa;IAChB,aAAA;;EAGF;EAAY;IACV,WAAA;;EAEF,KACE;IACE,WAAA;;EAFJ,KAIE;IACE,aAAA",
+  "file": "adapt.css"
+}

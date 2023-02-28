@@ -1,0 +1,58 @@
+.security-right .mypraise {
+  width: 95%;
+  margin: 10px auto;
+}
+.security-right .mypraise .title-meta {
+  height: 25px;
+  line-height: 25px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.security-right .mypraise .title-meta span:nth-child(1) {
+  color: #1E9FFF;
+  font-size: 18px;
+  font-weight: 600;
+}
+.security-right .mypraise .title-meta span:nth-child(2) {
+  color: rgba(255, 39, 42, 0.85);
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: -1px -1px 1px #ff2610;
+}
+.security-right .mypraise .praise-conetent {
+  height: 87%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+.security-right .mypraise .praise-conetent .praise-list {
+  height: 170px;
+  width: 25%;
+  display: flex;
+}
+.security-right .mypraise .praise-conetent .praise-list:hover {
+  cursor: pointer;
+}
+.security-right .mypraise .praise-conetent .praise-list .list-meta {
+  height: 97%;
+  width: 97%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.security-right .mypraise .praise-conetent .praise-list .list-meta .blog-wrap {
+  height: 77%;
+  width: 100%;
+}
+.security-right .mypraise .praise-conetent .praise-list .list-meta .blog-wrap img {
+  height: 100%;
+  width: 100%;
+}
+.security-right .mypraise .praise-conetent .praise-list .list-meta .blog-wrap p {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*# sourceMappingURL=mypraise.css.map */

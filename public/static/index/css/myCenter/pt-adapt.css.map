@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [
+    "pt-adapt.less"
+  ],
+  "names": [],
+  "mappings": "AACA,mBAAqC;EACnC,IACE;IACE,aAAA",
+  "file": "pt-adapt.css"
+}

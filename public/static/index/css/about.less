@@ -1,0 +1,524 @@
+//**********************初始化starting*************************
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  resize: none;
+  box-sizing: border-box;
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle
+}
+
+button, a {
+  cursor: pointer
+}
+
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0
+}
+
+.clearfix {
+  *zoom: 1
+}
+
+//*********************初始化ending**************************
+
+
+//变量定义
+@bgColor: #eee;
+@visualWidth: 75%;
+@category: 85%;
+@carouselHeight: 300px;
+@mainHeight: 1050px;
+//函数
+.display(@display) {
+  display: @display;
+}
+
+.fontSize(@fontSize) {
+  font-size: @fontSize;
+}
+
+.margin-top(@top:5px) {
+  margin-top: @top;
+}
+
+.margin-left(@left:5px) {
+  margin-left: @left;
+}
+
+.margin-right(@right:5px) {
+  margin-right: @right;
+}
+
+//***********header**************
+@header-color: #D56464;
+@headTextColor: aliceblue;
+@headHeight: 80px;
+//**************nav**************
+@navHeight: 50px;
+@navBgColor: #484848;
+@navBottomHeight: 40px;
+@navBottomBgColor: #FBFBFB;
+//*************导航类别样式**********
+@navTextColor: #ffffff;
+@navFontSize: 20px;
+@navFontWeiht: 700;
+//**************article**************
+//@articleHeight:1000px;
+//**************aside**************
+//@asidlHeight:900px;
+//*************QQ，微信等联系样式***********
+@contactBgColor: white;
+//**************滑动图**************
+@slideHeight: 170px;
+//**************最新文章************
+@newsArticleHeight: 300px;
+@newsArticleBgColor: white;
+//**************友情链接**************
+@linkBgColor: white;
+
+//code starting
+body {
+  background-color: @bgColor;
+}
+
+.header {
+  height: @headHeight;
+  background-color: @header-color;
+  color: @headTextColor;
+  text-align: center;
+  line-height: @headHeight;
+
+  .header1 {
+    .display(none);
+    .fontSize(28px);
+  }
+
+  .header2 {
+
+    .c1 {
+      .fontSize(38px);
+    }
+
+    .c2 {
+      .fontSize(32px)
+    }
+  }
+
+}
+
+body {
+  background-color: @bgColor;
+}
+
+.header {
+  height: @headHeight;
+  background-color: @header-color;
+  color: @headTextColor;
+  text-align: center;
+  line-height: @headHeight;
+
+  .header1 {
+    .fontSize(28px);
+  }
+
+  .header2 {
+    .c1 {
+      .fontSize(38px);
+    }
+
+    .c2 {
+      .fontSize(32px)
+    }
+  }
+
+}
+
+.nav {
+  height: @navHeight;
+  background-color: @navBgColor;
+
+  .nav-content {
+    width: @category;
+    height: @navHeight;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    line-height: @navHeight;
+    font-size: @navFontSize;
+    font-weight: @navFontWeiht;
+    font-style: italic;
+
+    .nav-middle {
+      flex: 7;
+
+      > ul {
+        height: 100%;
+        line-height: @navHeight;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        text-align: center;
+        font-style: initial;
+        font-weight: @navFontWeiht;
+        font-size: @navFontSize;
+
+        li {
+          flex: 1;
+          height: 100%;
+
+          > a {
+            color: white;
+
+            &:hover {
+              color: @header-color;
+            }
+          }
+        }
+      }
+
+      .nav-list {
+        li {
+          height: 100%;
+          position: relative;
+
+          ul {
+            width: 100%;
+            display: none;
+            background-color: rgba(51, 51, 51, 0.86);
+            color: @navTextColor;
+            position: absolute;
+            z-index: 999;
+
+            li:hover {
+              background-color: @header-color;
+            }
+
+            li a:hover {
+              color: white;
+              text-shadow: 1px 1px 2px white;
+            }
+          }
+        }
+      }
+    }
+
+    .search {
+      flex: 2;
+
+      span {
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          text-shadow: -1px -1px 3px @header-color;
+        }
+      }
+
+      input {
+        height: @navHeight/2.5;
+        width: 50%;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+//********************分割线*********
+.nav-bottom {
+  height: @navBottomHeight;
+  width: @visualWidth;
+  margin: 0 auto;
+  background-color: @navBottomBgColor;
+  display: flex;
+  justify-content: space-between;
+
+  .left {
+    width: 25%;
+
+    > img {
+      height: 30px;
+      width: 30px;
+      margin-top: -3px;
+    }
+
+    > span {
+      line-height: @navBottomHeight;
+      font-style: italic;
+      font-weight: 700;
+      .margin-left();
+    }
+  }
+
+  .right {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+
+    .no-login {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      width: 60%;
+
+      > li {
+        flex: 1;
+        line-height: @navBottomHeight;
+        font-weight: 700;
+        font-style: initial;
+        text-align: center;
+
+        img {
+          margin-right: 3px;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    .logined {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      > li {
+        flex: 1;
+        line-height: @navBottomHeight;
+        font-weight: 700;
+        font-style: initial;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        img {
+          margin-right: 3px;
+          height: 23px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  opacity: 0.8;
+}
+
+.main {
+  margin: 0 auto;
+  .margin-top(6px);
+  width: @visualWidth;
+  overflow: hidden;
+  background-color: white;
+
+  .title {
+    height: 40px;
+    border-bottom: 1px solid #dddddd;
+
+    h1 {
+      .margin-left(10px);
+      .margin-top(10px);
+    }
+  }
+
+  .intro-title {
+    .margin-top(30px);
+    height: 50px;
+    border-left: 4px solid #00a67c;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+
+  .about-img {
+    height: 100px;
+    text-align: center;
+    .margin-top(30px);
+
+    img {
+      height: 100%;
+      width: 100px;
+    }
+  }
+
+  .divide {
+    height: 1px;
+    display: flex;
+    justify-content: center;
+
+    span {
+      height: 50%;
+      width: 50%;
+      border-bottom: 1px dashed rgba(199, 199, 199, 0.71);
+    }
+  }
+
+  .brief {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .about-skills {
+    width: 60%;
+    margin: 30px auto;
+
+    .skill-list {
+      height: 40px;
+      display: flex;
+
+      .describe {
+        width: 15%;
+        height: 18px;
+        line-height: 18px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .progress {
+        width: 85%;
+        height: 23px;
+      }
+
+    }
+  }
+
+  .about-game {
+    width: 60%;
+    margin: 0 auto;
+    height: 260px;
+
+    .my-game {
+      display: flex;
+      margin-bottom: 30px;
+
+      .describe {
+        width: 15%;
+        height: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .game-describe {
+        font-size: 20px;
+        font-weight: 600;
+        height: 28px;
+        width: 85%;
+        text-align: center;
+        color: #007046;
+        background-color: #fff;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .about-me {
+    width: 60%;
+    margin: 0 auto;
+    height: 360px;
+
+    .about {
+      .margin-top();
+      display: flex;
+
+      .describe {
+        width: 15%;
+        height: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .about-describe {
+        font-size: 17px;
+        font-weight: 700;
+        width: 85%;
+        color: #D56464;
+        background-color: #fff;
+        line-height: 28px;
+
+        > i {
+          display: inline-block;
+          margin: 0 10px 3px 5px;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          background: #007046;
+          border-radius: 3px;
+          font-size: 12px;
+          font-style: normal;
+          color: #ffffff;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+//媒体查询
+@media screen and (min-width: 992px) and(max-width: 1200px) {
+  //导航栏
+  .nav .nav-content {
+    width: 100%;
+  }
+
+  //header
+  .nav-bottom {
+    width: 90%;
+  }
+
+  //内容
+  .main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  //导航栏
+  .nav .nav-content {
+    display: none;
+  }
+
+  //header
+  .nav-bottom {
+    width: 100%;
+  }
+
+  //内容
+  .main {
+    width: 100%;
+
+  }
+}
+
+

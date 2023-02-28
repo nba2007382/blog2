@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__STATIC__index/css/myCenter/common.css">
+    <link rel="stylesheet" href="__STATIC__index/css/myCenter/myicon.css">
+    <link rel="stylesheet" href="__STATIC__layui/css/layui.css">
+    <link rel="stylesheet" href="__STATIC__index/css/footer.css">
+    <script src="__STATIC__index/js/jquery-1.12.4.js"></script>
+    <script src="__STATIC__layui/layui.js"></script>
+    <!--引入CSS-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__webuploader-0.1.5/webuploader.css">
+    <!--引入JS-->
+    <script type="text/javascript" src="__STATIC__webuploader-0.1.5/webuploader.js"></script>
+    <title>我的头像</title>
+</head>
+<body>
+<!--二级导航栏 starting-->
+<div class="nav">
+    <div class="nav-content">
+        <div class="nav-middle">
+            <ul class="nav-list">
+                {foreach $cate as $k=>$v}
+                {if ($v.html=='')}
+                <li><a href="bloglist?tid={$v.tid}">{$v.typename}</a>
+                    {literal}
+                    <ul>{/literal}
+                        {foreach $cate as $index=>$value}
+                        {if($value.sid==$v.tid)}
+                        <li><a href="bloglist?tid={$value.tid}">{$value.typename}</a></li>
+                        {/if}
+                        {/foreach}
+                        {literal}
+                    </ul>
+                    {/literal}
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--二级导航栏 ending-->
+        <div class="search">
+            <form action="">
+                <input type="search" id="key" placeholder="请输入...">
+                <span id="search">搜索</span>
+            </form>
+        </div>
+        <div class="logined">
+            <ul>
+                <li><img src="{$Think.session.user['pic']}">{$Think.session.user['uname']}</li>
+                <li><img src="__INDEX_IMG_COMMON__主页.png" alt="主页"><a href="personalCenter">个人中心</a></li>
+                <li><img src="__INDEX_IMG_COMMON__注销.png" alt="注销"><a href="userLoginOut">注销</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="top-img">
+    <div class="top-img-center"><img src="__INDEX_IMG_PCENTER__topimg.png" alt="导航图">
+    </div>
+</div>
+<!--     主题内容starting       -->
+<div class="content">
+    <div class="security-left">
+        <span class="title">个人中心</span>
+        <ul class="sidebar-list">
+            <!--            <li><a class="cls" href="per_center.php">首<b-->
+            <!--                    style="width: 31px;display: inline-block;"></b>页</a><span></span></li>-->
+            <li><a class="cls" href="mybase">我的资料</a><span></span></li>
+            <li><a class="cls" href="account">帐号管理</a><span></span></li>
+            <li style="background-color: #00A1D7"><a class="cls" href="listicon">我的头像</a><span></span></li>
+            <li><a class="cls" href="mypraise">我的点赞</a><span></span></li>
+            <li><a class="cls" href="mylike">我的收藏</a><span></span></li>
+            <li><a class="cls" href="mycomments">我的留言</a><span></span></li>
+        </ul>
+    </div>
+    <div class="security-right">
+        <div class="title">
+            <span></span>
+            <span>我的头像</span>
+        </div>
+        <div class="myicon">
+            <div class="icon-content">
+                <div class="new-icon">
+                    <img src="" name="pic" id="avatar" alt="新头像">
+                    <img id="del" src="__ADMIN_IMG_FI__删除.png" alt="删除" title="删除">
+                    <img src="__INDEX_IMG_COMMON__上传.png" alt="上传头像" title="上传头像">
+                    <label id="picker">选择图片</label>
+                </div>
+                <div class="border-line">
+                    <p></p>
+                </div>
+                <div class="img-preview-wrap">
+                    <img src="{$data.pic}" alt="原来的头像" class="pre-img" title="原来的头像">
+                </div>
+            </div>
+        </div>
+        <p class="icon-note">请选择图片上传：大小180 * 180像素支持JPG、PNG等格式，图片需小于2M</p>
+        <div class="update">
+            <input type="button" value="更新" class="submit-disabled" id="submit">
+        </div>
+    </div>
+</div>
+<input type="hidden" name="uid" value="{$Think.session.user['uid']}" class="uid">
+<div class="footer">
+    <div class="footer-top"></div>
+    <div class="footer-buttom">
+        <div class="copy">
+            <p>
+                <a href="#">沐歌丨丶</a>
+                <span></span>
+                <a href="#">版权所有</a><span>|</span>
+                <a href="#">赵云</a><span>|</span>
+                <a href="#">花花</a><span>|</span>
+                <a href="#">韩信</a><span>|</span>
+                <a href="#">猴哥</a><span>|</span>
+                <a href="#">八戒</a><span>|</span>
+                <a href="#">香香</a><span>|</span>
+                <a href="#">安琪拉</a><span>|</span>
+                <a href="#">妲己</a><span>|</span>
+                <a href="#">婉儿</a>
+            </p>
+            <p><span>Copyright
+            @</span><a href="https://user.qzone.qq.com/1161105403/main">https://user.qzone.qq.com/1161105403/main</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__index/js/pt-center.js"></script>
+<script src="__STATIC__index/js/listicon.js"></script>
+</body>
+</html>

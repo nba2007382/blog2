@@ -1,0 +1,118 @@
+
+.security-right {
+  .myicon {
+    height: 45%;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon-content {
+      height: 70%;
+      width: 85%;
+      display: flex;
+      flex-wrap: nowrap;
+
+      .new-icon {
+        height: 90%;
+        width: 45%;
+        position: relative;
+
+        img:first-child {
+          height: 100%;
+          width: 100%;
+          display: none;
+        }
+
+        img:nth-child(2) {
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          right: 0;
+          top: 0;
+          display: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        img:nth-child(3) {
+          height: 70%;
+          width: 100%;
+        }
+
+        label {
+          display: block;
+          width: 150px;
+          margin-left: 82px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .border-line {
+        height: 90%;
+        width: 10%;
+
+        p {
+          height: 100%;
+          width: 52%;
+          border-right: 1px solid rgba(210, 210, 210, 0.61);
+        }
+      }
+
+      .img-preview-wrap {
+        height: 90%;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 80%;
+          width: 80%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .icon-note {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(99, 99, 99, 0.69);
+  }
+
+  .update {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      height: 45px;
+      width: 155px;
+      border-radius: 4px;
+    }
+
+    .submit-disabled {
+      background: #f4f5f7;
+      border-color: #f4f5f7;
+      color: #ccd0d7;
+    }
+
+    .submit {
+      background-color: #00B5E5;
+      color: #ffffff;
+
+      &:hover {
+        background-color: rgba(0, 181, 229, .8);
+        cursor: pointer;
+      }
+    }
+  }
+}

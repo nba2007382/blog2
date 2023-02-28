@@ -1,0 +1,51 @@
+//媒体查询
+@media screen and (min-width: 992px) and(max-width: 1200px) {
+  //导航栏
+  .nav .nav-content {
+    width: 100%;
+  }
+
+  //轮播图
+  #carousel {
+    display: none;
+  }
+
+  //header,内容
+  .nav-bottom, .main {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 992px) {
+  //导航栏,轮播图
+  .nav .nav-middle, #carousel {
+    display: none;
+  }
+
+  //header,main
+  .nav-bottom, .main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  //导航栏,轮播图
+  .nav .nav-middle, #carousel, .header {
+    display: none;
+  }
+
+  //header,main
+  .nav-bottom, .main {
+    width: 100%;
+  }
+
+  .main {
+    .article {
+      width: 100%;
+    }
+
+    .aside {
+      display: none;
+    }
+  }
+}

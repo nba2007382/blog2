@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  resize: none;
+  box-sizing: border-box;
+  border: 0;
+}
+input {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+button,
+a {
+  cursor: pointer;
+}
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.bg .swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(7px);
+  opacity: 0.8;
+}
+.bg .swiper-container .swiper-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.login {
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -175px;
+  margin-left: -175px;
+  z-index: 999;
+  background-color: rgba(106, 217, 153, 0.47);
+  box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: white;
+  font-size: 13px;
+}
+.login:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  font-size: 13px;
+}
+.login::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  font-size: 13px;
+}
+.login:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: white;
+  font-size: 13px;
+}
+.login .content {
+  height: 80%;
+  width: 75%;
+  position: relative;
+}
+.login .content .login-error {
+  position: absolute;
+  left: 69px;
+  top: -25px;
+  color: red;
+  font-style: italic;
+  text-shadow: 1px 1px 1px rgba(203, 0, 0, 0.82);
+}
+.login .content .login-title {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+.login .content .account {
+  margin-top: 30px;
+  height: 45px;
+}
+.login .content .account input {
+  background-color: transparent;
+}
+.login .content .account img {
+  height: 30px;
+  width: 30px;
+}
+.login .content .password {
+  height: 45px;
+}
+.login .content .password input {
+  background-color: transparent;
+}
+.login .content .password img {
+  height: 30px;
+  width: 30px;
+}
+.login .content .captcha-list {
+  height: 45px;
+  width: 100%;
+  display: flex;
+}
+.login .content .captcha-list .meta {
+  color: white;
+}
+.login .content .captcha-list .meta img {
+  height: 30px;
+  width: 30px;
+}
+.login .content .captcha-list .captcha {
+  margin-left: 4px;
+}
+.login .content .captcha-list .captcha input {
+  margin-top: 5px;
+  background-color: transparent;
+}
+.login .content .captcha-list .code-img span {
+  display: block;
+  height: 30px;
+  width: 80px;
+  background-color: #fff;
+  margin-left: -10px;
+}
+.login .content .captcha-list .code-img span img {
+  width: 100%;
+  height: 100%;
+}
+.login .content .submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #4FA1D9;
+  transition: all 3s;
+}
+.login .content .submit:hover {
+  background-color: #1bc1d9;
+  color: #ffffff;
+}
+.login .content .submit:hover button {
+  color: #ffffff;
+}
+.login .content .submit button {
+  background-color: transparent;
+  color: #4FA1D9;
+}
+.login .content .register {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.login .content .register .res-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.login .content .register .res-list span {
+  font-size: 14px;
+}
+.login .content .register .res-list a {
+  font-size: 17px;
+  font-weight: 800;
+  color: rgba(113, 84, 217, 0.92);
+}
+/*# sourceMappingURL=login.css.map */

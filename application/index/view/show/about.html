@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于博主</title>
+    <link rel="stylesheet" href="__STATIC__index/css/about.css">
+    <link rel="stylesheet" href="__STATIC__index/css/footer.css">
+    <link rel="stylesheet" href="__STATIC__layui/css/layui.css">
+    <script src="__STATIC__index/js/jquery-1.12.4.js"></script>
+    <script src="__STATIC__layui/layui.js"></script>
+    <meta name="description" content="这是我的个人信息,主要擅长web领域,HTML,css,js,vue,jquery,php,thinkphp">
+    <meta name="keywords" content="博主,个人信息,沐歌,沐兮,我的游戏,我的技能,个人简介">
+</head>
+<body>
+<!--顶部导航starting-->
+<div class="header">
+    <div class="header2">
+        <i class="c1">沐歌丨丶</i>
+        <i class="c2">的专属博客~</i>
+    </div>
+</div>
+<!--顶部导航ending-->
+<!-- nav starting -->
+<!--二级导航栏 starting-->
+<div class="nav">
+    <div class="nav-content">
+        <div class="nav-middle">
+            <ul class="nav-list">
+                {foreach $cate as $k=>$v}
+                {if ($v.html=='')}
+                <li><a href="bloglist?tid={$v.tid}">{$v.typename}</a>
+                    {literal}
+                    <ul>{/literal}
+                        {foreach $cate as $index=>$value}
+                        {if($value.sid==$v.tid)}
+                        <li><a href="bloglist?tid={$value.tid}">{$value.typename}</a></li>
+                        {/if}
+                        {/foreach}
+                        {literal}
+                    </ul>
+                    {/literal}
+                </li>
+                {/if}
+                {/foreach}
+            </ul>
+        </div>
+        <!--二级导航栏 ending-->
+        <div class="search">
+            <form action="">
+                <input type="search" id="key" placeholder="请输入...">
+                <span id="search">搜索</span>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="nav-bottom">
+    <div class="left">
+        <img src="__INDEX_IMG_COMMON__喇叭.png" alt="喇叭">
+        <span>欢迎来访~</span>
+    </div>
+    <div class="right">
+        {if(!$Think.session.user)}
+        <ul class="no-login">
+            <li><img src="__INDEX_IMG_COMMON__未登录头象.png" alt="登录"><a href="login">登录</a></li>
+            <li><img src="__INDEX_IMG_COMMON__register.png" alt="注册"><a href="register">注册</a></li>
+            <input type="hidden" value="0" class="uid">
+        </ul>
+        {else /}
+        <ul class="logined">
+            <li><img src="{$Think.session.user['pic']}">{$Think.session.user['uname']}</li>
+            <li><img src="__INDEX_IMG_COMMON__主页.png" alt="主页"><a href="personalCenter">个人中心</a></li>
+            <li><img src="__INDEX_IMG_COMMON__注销.png" alt="注销"><a href="userLoginOut">注销</a></li>
+            <input type="hidden" value="{$Think.session.user['uid']}" class="uid">
+        </ul>
+        {/if}
+    </div>
+</div>
+<!-- nav ending -->
+<!--轮播图starting-->
+<!--轮播图ending-->
+<div class="main clearfix">
+    <div class="title">
+        <h1>关于博主</h1>
+    </div>
+    <div class="intro-title">
+        <h2>个人简介</h2>
+    </div>
+    <p class="about-img"><img src="__INDEX_IMG_COMMON__沐歌.jpg" alt="沐歌"></p>
+    <p style="height: 40px;line-height: 40px;text-align: center;font-size: 18px;font-weight: 700">沐歌</p>
+    <p class="brief">无人与你重影</p>
+    <p class="brief">一夜无梦</p>
+    <p class="brief">深秋微寒</p>
+    <p class="brief">我守在月光打散的竹林</p>
+    <p class="brief">形单影只的落寞你却看不到</p>
+    <p class="divide"><span></span></p>
+    <p class="brief">世界这么大还是遇见你</p>
+    <p class="brief">多少次疯狂</p>
+    <p class="brief">多少天真</p>
+    <p class="brief">一起做过梦</p>
+    <p class="brief">有一天我们会重逢故里</p>
+    <div class="intro-title">
+        <h2>我的技能</h2>
+    </div>
+    <div class="about-skills clearfix">
+        <div class="skill-list">
+            <div class="describe">html/css</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="92%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">less/scss</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="90%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">Vue2</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-black" lay-percent="88%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">JavaScript</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="85%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">ThinkPHP5</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="85%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">PHP7</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-cyan" lay-percent="80%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">React</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="76%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">uni-app</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="75%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">微信小程序</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-black" lay-percent="70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">React-Native0.61</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">JQuery</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-cyan" lay-percent="70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">MySQL</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">webpack</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-cyan" lay-percent="70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">Java</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="49%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">Python/Android</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="33%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-title">
+        <h2>四种布局</h2>
+    </div>
+    <div class="about-skills clearfix">
+        <div class="skill-list">
+            <div class="describe">伸缩布局</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="94%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">流式布局</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="94%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">响应式布局</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-black" lay-percent="93%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-list">
+            <div class="describe">REM布局</div>
+            <div class="progress">
+                <div class="layui-progress layui-progress-big" lay-showPercent="true">
+                    <div class="layui-progress-bar layui-bg-blue" lay-percent="90%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-title">
+        <h2>我的游戏</h2>
+    </div>
+    <div class="about-game clearfix">
+        <div class="my-game">
+            <div class="describe">QQ飞车端游</div>
+            <div class="game-describe">
+                十年以上老玩家。改装老手、抽奖老手、技术大师、赛道随心造红人。
+            </div>
+        </div>
+        <div class="my-game">
+            <div class="describe">第五人格</div>
+            <div class="game-describe">
+                第二赛季六级人皇。喜欢调香师,慈善家,魔术师。五阶屠夫,擅长小丑。(已退)
+            </div>
+        </div>
+        <div class="my-game">
+            <div class="describe">王者荣耀</div>
+            <div class="game-describe">
+                入坑一年多，段位王者，主玩战士刺客法师射手，喜欢赵云。
+            </div>
+        </div>
+        <div class="my-game">
+            <div class="describe">2Konline</div>
+            <div class="game-describe">
+                入坑六年以上，不太常玩，技术一般。
+            </div>
+        </div>
+        <div class="my-game">
+            <div class="describe">单机</div>
+            <div class="game-describe">
+                主要策略类如三国群英传等。动作类如真三国，鬼泣等。
+            </div>
+        </div>
+    </div>
+    <div class="intro-title">
+        <h2>关于我的</h2>
+    </div>
+    <div class="about-me clearfix">
+        <div class="about">
+            <div class="describe">( ′◔ ‸◔`)❓</div>
+            <div class="about-describe ">
+                <i>1</i>酷爱音乐🎵,累计听歌2W+,尤其喜欢纯音乐,如 HANABI、Rain after Summer、Only Wish、Time To Love......
+                音乐🎵是没有国界的奥~
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe"></div>
+            <div class="about-describe">
+                <i>2</i>喜欢耍篮球🏀,曾自学街球一年半。喜欢科比·布莱恩特。此外还喜欢排球🏐、羽毛球🏸、兵乓球🏓......
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe"></div>
+            <div class="about-describe">
+                <i>3</i>旅游、开黑统统逃不出我的手掌心✋...
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe">( ′◔ ‸◔`)❓</div>
+            <div class="about-describe ">
+                <i>1</i>喜欢周杰伦,并常常边唱玩游戏🌈尤其是晴天、七里香、花海、彩虹、东风破......
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe"></div>
+            <div class="about-describe ">
+                <i>2</i>喜欢迈克尔杰克逊，自小便喜欢模仿其舞蹈🌈喜欢他的You Are Not Alone、Heal the World......
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe">( ′◔ ‸◔`)❓</div>
+            <div class="about-describe ">
+                <i>1</i>讨厌暴力、麻烦的事......遗憾的是-在大连上大学却并未学会游泳🏊
+            </div>
+        </div>
+        <div class="about">
+            <div class="describe"></div>
+            <div class="about-describe ">
+                <i>2</i>体重？三围？长相？ヽ(*。>Д<)o゜
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<div class="footer">
+    <div class="footer-top"></div>
+    <div class="footer-buttom">
+        <div class="copy">
+            <p>
+                <a href="#">沐歌丨丶</a>
+                <span></span>
+                <a href="#">版权所有</a><span>|</span>
+                <a href="#">赵云</a><span>|</span>
+                <a href="#">花花</a><span>|</span>
+                <a href="#">韩信</a><span>|</span>
+                <a href="#">猴哥</a><span>|</span>
+                <a href="#">八戒</a><span>|</span>
+                <a href="#">香香</a><span>|</span>
+                <a href="#">安琪拉</a><span>|</span>
+                <a href="#">妲己</a><span>|</span>
+                <a href="#">婉儿</a>
+            </p>
+            <p><span>Copyright
+            @</span><a href="https://user.qzone.qq.com/1161105403/main">https://user.qzone.qq.com/1161105403/main</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__index/js/about.js"></script>
+</body>
+</html>

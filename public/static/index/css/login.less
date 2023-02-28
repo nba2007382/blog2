@@ -1,0 +1,245 @@
+//**********************初始化starting*************************
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  resize: none;
+  box-sizing: border-box;
+  border: 0;
+}
+
+input {
+  outline: none
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle
+}
+
+button, a {
+  cursor: pointer
+}
+
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0
+}
+
+.clearfix {
+  *zoom: 1
+}
+
+//*********************初始化ending**************************
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(7px);
+    opacity: .8;
+
+    .swiper-wrapper {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@loginHeight: 350px;
+@loginWidth: 350px;
+.login {
+  height: @loginHeight;
+  width: @loginWidth;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -@loginHeight/2;
+  margin-left: -@loginWidth/2;
+  z-index: 999;
+  background-color: rgba(106, 217, 153, 0.47);
+  box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & ::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+    font-size: 13px;
+  }
+
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+    font-size: 13px;
+
+  }
+
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    font-size: 13px;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+    font-size: 13px;
+  }
+
+  .content {
+    height: 80%;
+    width: 75%;
+    position: relative;
+
+    .login-error {
+      position: absolute;
+      left: 69px;
+      top: -25px;
+      color: red;
+      font-style: italic;
+      text-shadow: 1px 1px 1px rgba(203, 0, 0, 0.82);
+    }
+
+    .login-title {
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .account {
+      margin-top: 30px;
+      height: 45px;
+
+      input {
+        background-color: transparent;
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .password {
+      height: 45px;
+
+      input {
+        background-color: transparent;
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .captcha-list {
+      height: 45px;
+      width: 100%;
+      display: flex;
+
+      .meta {
+        color: white;
+
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      .captcha {
+        margin-left: 4px;
+
+        input {
+          margin-top: 5px;
+          background-color: transparent;
+        }
+      }
+
+      .code-img {
+        span {
+          display: block;
+          height: 30px;
+          width: 80px;
+          background-color: #fff;
+          margin-left: -10px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid #4FA1D9;
+      transition: all 3s;
+
+      &:hover {
+        background-color: #1bc1d9;
+        color: #ffffff;
+      }
+
+      &:hover button {
+        color: #ffffff;
+      }
+
+      button {
+        background-color: transparent;
+        color: #4FA1D9;
+      }
+    }
+
+    .register {
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      .res-list {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        span {
+          font-size: 14px;
+        }
+
+        a {
+          font-size: 17px;
+          font-weight: 800;
+          color: rgba(113, 84, 217, 0.92);
+        }
+      }
+    }
+  }
+}
+
+

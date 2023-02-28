@@ -1,0 +1,45 @@
+//**************footer**************
+@footerButtomBgColor: #333333;
+@footerTopHeight: 10px;
+@footerTopBgColor: #D56464;
+@footerBottomHeight: 75px;
+@footerBottomFontSize: 16px;
+@footerACorlor: #aaa;
+@footerAHover: white;
+.footer {
+  margin-top: 5px;
+
+  .footer-top {
+    width: 100%;
+    height: @footerTopHeight;
+    background-color: @footerTopBgColor;
+  }
+
+  .footer-buttom {
+    width: 100%;
+    height: @footerBottomHeight;
+    font-size: @footerBottomFontSize;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 15px;
+    background-color: @footerButtomBgColor;
+
+    .copy {
+      width: 80%;
+      margin: 0 auto;
+
+      a {
+        color: @footerACorlor;
+
+        &:hover {
+          color: @footerAHover;
+        }
+      }
+
+      span {
+        margin: 0 5px;
+        color: @footerACorlor;
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  resize: none;
+  box-sizing: border-box;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+button,
+a {
+  cursor: pointer;
+}
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.bg .swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(7px);
+  opacity: 0.8;
+}
+.bg .swiper-container .swiper-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.register {
+  height: 450px;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -225px;
+  margin-left: -175px;
+  z-index: 999;
+  background-color: rgba(167, 101, 172, 0.26);
+  box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: white;
+  font-size: 13px;
+}
+.register:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  font-size: 13px;
+}
+.register::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  font-size: 13px;
+}
+.register:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: white;
+  font-size: 13px;
+}
+.register .content {
+  height: 80%;
+  width: 75%;
+}
+.register .content .login-title {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+.register .content .uname {
+  margin-top: 30px;
+  height: 45px;
+}
+.register .content .uname input {
+  background-color: transparent;
+}
+.register .content .uname img {
+  height: 28px;
+  width: 28px;
+}
+.register .content .account {
+  height: 45px;
+}
+.register .content .account span {
+  color: red;
+  font-size: 15px;
+  text-shadow: 1px 1px 2px red;
+  margin-left: -55px;
+}
+.register .content .account input {
+  background-color: transparent;
+}
+.register .content .account img {
+  height: 30px;
+  width: 30px;
+}
+.register .content .password {
+  height: 45px;
+}
+.register .content .password input {
+  background-color: transparent;
+}
+.register .content .password img {
+  height: 30px;
+  width: 30px;
+}
+.register .content .again-password {
+  height: 45px;
+}
+.register .content .again-password span {
+  color: red;
+  font-size: 15px;
+  text-shadow: 1px 1px 2px red;
+  margin-left: -55px;
+}
+.register .content .again-password input {
+  background-color: transparent;
+}
+.register .content .again-password img {
+  height: 30px;
+  width: 30px;
+}
+.register .content .captcha-list {
+  height: 45px;
+  width: 100%;
+  display: flex;
+}
+.register .content .captcha-list .meta {
+  color: white;
+}
+.register .content .captcha-list .meta img {
+  height: 30px;
+  width: 30px;
+}
+.register .content .captcha-list .captcha {
+  margin-left: 4px;
+}
+.register .content .captcha-list .captcha input {
+  margin-top: 5px;
+  background-color: transparent;
+}
+.register .content .captcha-list .code-img span {
+  display: block;
+  height: 30px;
+  width: 60px;
+  background-color: #fff;
+}
+.register .content .captcha-list .code-img span img {
+  height: 100%;
+  width: 100%;
+}
+.register .content .submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #4FA1D9;
+  transition: all 3s;
+}
+.register .content .submit:hover {
+  background-color: #1bc1d9;
+  color: #ffffff;
+}
+.register .content .submit:hover button {
+  color: #ffffff;
+}
+.register .content .submit button {
+  background-color: transparent;
+  color: #4FA1D9;
+}
+.register .content .login {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.register .content .login .login-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.register .content .login .login-list a {
+  font-size: 17px;
+  font-weight: 800;
+  color: rgba(113, 84, 217, 0.92);
+}
+/*# sourceMappingURL=register.css.map */

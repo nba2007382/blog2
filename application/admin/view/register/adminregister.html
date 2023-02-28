@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员注册</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__admin/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__admin/css/demo.css"/>
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__admin/css/component.css"/>
+    <link rel="stylesheet" href="__STATIC__layui/css/layui.css">
+    <script src="__STATIC__layui/layui.js"></script>
+    <script type="text/javascript" src="__STATIC__admin/js/jquery-1.7.2.min.js"></script>
+    <meta name="description" content="沐歌(Taobao.com)是一个自主开发的个人博客平台，喜欢的可以！">
+    <meta name="keywords" content="登录,注册,登陆,沐歌,沐兮,博客登录,个人博客,个人博客登录">
+    <style>
+        .contain {
+            display: flex;
+        }
+
+        .captcha {
+            flex: 1;
+            flex-flow: nowrap;
+            height: 46px;
+            width: 170px;
+        }
+
+        .captcha img {
+            border-radius: 50px;
+            margin-top: 2px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container demo-1">
+    <div class="content">
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <div class="logo_box">
+                <h3 style="font-style: italic;font-size: 22px;">还等什么？赶紧注册吧~</h3>
+                {if(session('?error'))}
+                <h5 style="text-align: center;margin-bottom: 5px;margin-top: -5px;color: red;font-style: italic;font-weight: 600;">
+                    {:session('error')}</h5>
+                {/if}
+
+                <form action="#" method="post">
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input name="adminName" class="text" autocomplete="off" style="color: #FFFFFF !important"
+                               type="text" placeholder="请输入昵称">
+                    </div>
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input name="adminAccount" class="text account_input" autocomplete="off"
+                               style="color: #FFFFFF !important"
+                               type="text" placeholder="请输入帐号">
+                        <span style="color:red;position: absolute;right: 5px;top: 10px;font-weight: 600;font-size: 15px"
+                              class="isExit"> </span>
+                    </div>
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input name="password" class="text psw"
+                               style="color: #FFFFFF !important; position:absolute; z-index:100;" value=""
+                               type="password" placeholder="请输入密码" maxlength="17">
+                    </div>
+                    <div class="input_outer" id="ag_psd">
+                        <span class="us_uer"></span>
+                        <input name="ag_password" class="text ag_password"
+                               style="color: #FFFFFF !important; position:absolute; z-index:100;" value=""
+                               type="password" placeholder="请确认密码" maxlength="17">
+                        <span style="color:red;position: absolute;right: 5px;top: 10px;font-weight: 600;font-size: 15px"
+                              class="agw"> </span>
+                    </div>
+
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input class="text" id="pass-check"
+                               style="color: #FFFFFF !important; position:absolute; z-index:100;" value=""
+                               placeholder="请确认通行证" maxlength="17">
+                        <span style="color:red;position: absolute;right: 5px;top: 10px;font-weight: 600;font-size: 15px"
+                              class="passCheck"> </span>
+                    </div>
+
+                    <div class="contain">
+                        <div class="input_outer" style="width: 180px;">
+                            <span><img src="__STATIC__admin/images/验证码.png" height="25" width="25"
+                                       style="margin: 10px 13px;position: absolute;"></span>
+                            <input name="captcha" class="text" autocomplete="off"
+                                   style="color: #FFFFFF !important; position:absolute; z-index:100;width: 105px;"
+                                   type="text" placeholder="请输入验证码">
+                        </div>
+                        <div class="captcha">
+                            <img id="pic" src="captcha" alt="验证码">
+                        </div>
+                    </div>
+                    <div class="mb2"><a id="sub" lay-filter="sub" class="act-but submit" href="javascript:"
+                                        style="color: #FFFFFF">注册</a></div>
+                    <div style="display: flex;justify-content: flex-end;margin-right: 5px">
+                        已有账号？请<a href="adminlogin"
+                                 style="color: green;font-size: 16px;font-weight: 600;margin-top: -1px">登录</a>吧~
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script src="__STATIC__admin/js/TweenLite.min.js"></script>
+<script src="__STATIC__admin/js/EasePack.min.js"></script>
+<script src="__STATIC__admin/js/rAF.js"></script>
+<script src="__STATIC__admin/js/demo-1.js"></script>
+<script src="__STATIC__admin/js/adminRegister.js"></script>
+</body>
+</html>

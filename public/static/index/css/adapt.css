@@ -1,0 +1,48 @@
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .nav .nav-content {
+        width: 100%;
+    }
+
+    #carousel {
+        display: none;
+    }
+
+    .nav-bottom,
+    .main {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .nav .nav-content,
+    #carousel {
+        display: none;
+    }
+
+    .nav-bottom,
+    .main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav .nav-content,
+    #carousel {
+        display: none;
+    }
+
+    .nav-bottom,
+    .main {
+        width: 100%;
+    }
+
+    .main .article {
+        width: 100%;
+    }
+
+    .main .aside {
+        display: none;
+    }
+}
+
+/*# sourceMappingURL=adapt.css.map */

@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  resize: none;
+  box-sizing: border-box;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+button,
+a {
+  cursor: pointer;
+}
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+.nav {
+  height: 50px;
+  background-color: #1bc1d9;
+}
+.nav .nav-content {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+}
+.nav .nav-content .nav-middle {
+  flex: 6;
+}
+.nav .nav-content .nav-middle > ul {
+  height: 100%;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  text-align: center;
+  font-style: initial;
+  font-weight: 700;
+  font-size: 20px;
+}
+.nav .nav-content .nav-middle > ul li {
+  flex: 1;
+  height: 100%;
+}
+.nav .nav-content .nav-middle > ul li > a {
+  color: white;
+}
+.nav .nav-content .nav-middle > ul li > a:hover {
+  color: #D56464;
+}
+.nav .nav-content .nav-middle .nav-list li {
+  height: 100%;
+  position: relative;
+}
+.nav .nav-content .nav-middle .nav-list li ul {
+  width: 100%;
+  display: none;
+  background-color: rgba(49, 142, 145, 0.74);
+  color: #ffffff;
+  position: absolute;
+  z-index: 999;
+}
+.nav .nav-content .nav-middle .nav-list li ul li:hover {
+  background-color: #D56464;
+}
+.nav .nav-content .nav-middle .nav-list li ul li a:hover {
+  color: white;
+  text-shadow: 1px 1px 2px white;
+}
+.nav .nav-content .search {
+  flex: 2;
+}
+.nav .nav-content .search span {
+  color: white;
+  cursor: pointer;
+}
+.nav .nav-content .search span:hover {
+  text-shadow: -1px -1px 3px #D56464;
+}
+.nav .nav-content .search input {
+  height: 20px;
+  width: 50%;
+  border-radius: 5px;
+}
+.nav .nav-content .logined {
+  flex: 2;
+}
+.nav .nav-content .logined ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.nav .nav-content .logined ul > li {
+  flex: 1;
+  line-height: 40px;
+  font-weight: 700;
+  font-style: initial;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nav .nav-content .logined ul > li img {
+  margin-right: 3px;
+  height: 23px;
+  width: 30px;
+}
+.top-img {
+  background-color: #C2D9DF;
+  height: 85px;
+}
+.top-img .top-img-center {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
+.top-img .top-img-center img {
+  height: 100%;
+  width: 100%;
+}
+.content {
+  width: 1050px;
+  height: 800px;
+  margin: 10px auto 100px;
+  border: 1px solid #e1e2e5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  display: flex;
+}
+.security-left {
+  flex: 1.5;
+  background-color: #FAFAFA;
+  border-right: 1px solid #d2d2d2;
+  overflow: hidden;
+}
+.security-left .sidebar-list .cls {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  color: black;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+.security-left .sidebar-list > li {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  position: relative;
+}
+.security-left .sidebar-list > li > span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 193, 217, 0.19);
+  left: -167px;
+}
+.security-left > span {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  color: #99a2aa;
+  cursor: default;
+  border-bottom: 1px solid #e1e2e5;
+}
+.security-right {
+  flex: 8;
+}
+.security-right .title {
+  height: 50px;
+  border-bottom: 1px solid #e1e2e5;
+}
+.security-right .title span:nth-of-type(1) {
+  float: left;
+  width: 4px;
+  height: 16px;
+  margin-top: 18px;
+  background-color: #00a1d6;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+.security-right .title span:nth-of-type(2) {
+  float: left;
+  margin: 15px 0 0 5px;
+  color: #00a1d6;
+  font-size: 14px;
+  cursor: default;
+}
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+  .nav .nav-content .logined {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .nav,
+  .top-img {
+    display: none;
+  }
+  .content {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=common.css.map */

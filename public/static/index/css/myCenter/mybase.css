@@ -1,0 +1,67 @@
+.security-right .mybase {
+  height: 80%;
+  width: 95%;
+  margin: 10px auto;
+}
+.security-right .mybase .user-info {
+  height: 12%;
+  display: flex;
+}
+.security-right .mybase .user-info .user-img {
+  flex: 1;
+}
+.security-right .mybase .user-info .user-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.security-right .mybase .user-info .user-name {
+  flex: 6;
+  margin-left: 10px;
+}
+.security-right .mybase .user-info .user-name > p {
+  margin-top: 10px;
+}
+.security-right .mybase .task-head {
+  display: flex;
+  margin-top: 20px;
+}
+.security-right .mybase .task-head h4 {
+  flex: 1;
+  font-size: 16px;
+}
+.security-right .mybase .task-head p {
+  flex: 8;
+  height: 1px;
+  background-color: #E9E9E9;
+  margin-top: 10px;
+}
+.security-right .mybase .task-head a {
+  flex: 1;
+  font-size: 12px;
+  text-align: right;
+}
+.security-right .mybase .task-head a img {
+  height: 20px;
+  width: 20px;
+}
+.security-right .mybase .user-info-list {
+    height: 45%;
+    margin-top: 20px;
+    border-bottom: 1px solid #E9E9E9;
+}
+.security-right .mybase .user-info-list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.security-right .mybase .user-info-list ul li {
+    width: 50%;
+    font-size: 14px;
+    color: #999;
+    padding: 20px 0;
+}
+.security-right .mybase .user-info-list ul li span {
+  font-size: 14px;
+  color: black;
+}
+/*# sourceMappingURL=mybase.css.map */
